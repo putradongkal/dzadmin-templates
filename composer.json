@@ -1,0 +1,35 @@
+{
+    "name": "infyomlabs/dzadmin-templates",
+    "description": "DZ Admin templates for InfyOm Laravel Generator",
+    "keywords": [
+        "infyom",
+        "laravel",
+        "generator",
+        "dzadmin",
+        "templates",
+        "bootstrap"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Irfan",
+            "email": "qcutterz@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "illuminate/support": "^6.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "InfyOm\\DZAdminTemplates\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "\\InfyOm\\DZAdminTemplates\\DZAdminTemplatesServiceProvider"
+            ]
+        }
+    }
+}

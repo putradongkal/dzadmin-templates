@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="utf-8" />
+    <title>InfyOm Laravel Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="{!! asset('vendor/animate.css/animate.css') !!}" type="text/css" />
+    <link rel="stylesheet" href="{!! asset('vendor/font-awesome-5.10.2/css/all.min.css') !!}" type="text/css" />
+    <link rel="stylesheet" href="{!! asset('vendor/bootstrap/css/bootstrap.css') !!}" type="text/css" />
+    <link rel="stylesheet" href="{!! asset('vendor/dz-templates/css/font.css') !!}" type="text/css" />
+    <link rel="stylesheet" href="{!! asset('vendor/dz-templates/css/app.css') !!}" type="text/css" />
+</head>
+<body>
+<div class="app app-header-fixed">
+    <div class="container w-xxl w-auto-xs">
+        <a href="{{ url('/home') }}" class="navbar-brand block m-t">Infyom Generator</a>
+        <div class="m-b-lg">
+            <div class="wrapper text-center">
+                <strong>Sign in to start your session</strong>
+            </div>
+            <form method="post" action="{{ url('/login') }}">
+                {!! csrf_field() !!}
+                <div class="text-danger wrapper text-center">
+                    @if ($errors->has('email'))
+                        {{ $errors->first('email') }}
+                    @elseif($errors->has('password'))
+                        {{ $errors->first('password') }}
+                    @endif
+                </div>
+                <div class="list-group list-group-sm">
+                    <div class="list-group-item">
+                        <div class="input-group">
+                            <span class="input-group-addon no-border" style="background-color: unset; padding: 6px 4px;"><i class="fas fa-envelope"></i></span>
+                            <input type="text" name="email" value="{{ old('email') }}" placeholder="Email" class="form-control no-border" required>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="input-group">
+                            <span class="input-group-addon no-border" style="background-color: unset; padding: 6px 4px;"><i class="fas fa-key"></i></span>
+                            <input type="password" name="password" placeholder="Password" class="form-control no-border" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="remember" value=""> Remember Me
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Log in</button>
+                <div class="text-center m-t m-b"><a href="{{ url('/password/reset') }}">Forgot password?</a></div>
+                <div class="line line-dashed"></div>
+                <p class="text-center"><small>Do not have an account?</small></p>
+                <a href="{{ url('/register') }}" class="btn btn-lg btn-default btn-block">Create an account</a>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="{!! asset('vendor/jquery/jquery.min.js') !!}"></script>
+<script src="{!! asset('vendor/bootstrap/js/bootstrap.min.js') !!}"></script>
+</body>
+</html>
